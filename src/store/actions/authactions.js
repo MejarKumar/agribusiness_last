@@ -10,7 +10,7 @@ export const signUp = (user) => {
 
     return (dispatch) => {
 
-        axios.post("https://agribusinesspro.herokuapp.com/api/signup", user).then(token => {
+        axios.post("https://agribusiness-api.onrender.com/api/signup", user).then(token => {
             localStorage.setItem("token", token.data);
 
             dispatch({
@@ -32,7 +32,7 @@ export const signUp = (user) => {
 
 export const signIn = (email, password) => {
     return (dispatch) => {
-        axios.post("https://agribusinesspro.herokuapp.com/api/login", { email, password }).then(token => {
+        axios.post("https://agribusiness-api.onrender.com/api/login", { email, password }).then(token => {
             localStorage.setItem("token", token.data);
             dispatch({
                 type: 'SIGN_IN',

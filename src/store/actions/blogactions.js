@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 export const getBlogs = () => {
     return (dispatch) => {
         axios
-            .get("https://agribusinesspro.herokuapp.com/api/blogs", setHeaders())
+            .get("https://agribusiness-api.onrender.com/api/blogs", setHeaders())
             .then((blogs) => {
                 dispatch({
                     type: "GET_BLOGS",
@@ -22,7 +22,7 @@ export const getBlogs = () => {
 export const getBlogById = (id) => {
     return (dispatch) => {
         axios
-            .get("https://agribusinesspro.herokuapp.com/api/blog/:id", setHeaders())
+            .get("https://agribusiness-api.onrender.com/api/blog/:id", setHeaders())
             .then((Blogs) => {
                 dispatch({
                     type: "GET_BLOG_BY_ID",
@@ -41,7 +41,7 @@ export const addBlog = (newBlog) => {
         const author = getState().auth.username;
         const uid = getState().auth._id;
         axios
-            .post("https://agribusinesspro.herokuapp.com/api/writeblog", { ...newBlog, author, uid }, setHeaders())
+            .post("https://agribusiness-api.onrender.com/api/writeblog", { ...newBlog, author, uid }, setHeaders())
             .then((Blogs) => {
                 dispatch({
                     type: "ADD_BLOG",
